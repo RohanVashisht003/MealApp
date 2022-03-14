@@ -5,6 +5,7 @@
 
 body {
     background-color: #3498db;
+    min-height: 100vh;
 }
 
 .wrapper {
@@ -46,6 +47,7 @@ body {
     padding: 2px;
     flex-wrap: wrap;
     overflow-y: scroll;
+    min-height: 55vh;
 }
 
 #meal-suggestion-list::-webkit-scrollbar {
@@ -184,6 +186,13 @@ body {
     }
 }
 
+
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    color: white;
+}
 
 /* <================= media queries=========================> */
 

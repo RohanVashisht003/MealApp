@@ -22,7 +22,6 @@ favBtn.addEventListener('click', function showFavourites() {
 
 
 
-
 //5. rendering and filtering results
 function renderAndFilterResults(meals, isFavCalled) {
 
@@ -71,6 +70,8 @@ function renderAndFilterResults(meals, isFavCalled) {
             localStorage.setItem(meal.idMeal, JSON.stringify(meal));
             window.location.replace('meal.html?' + meal.idMeal);
         });
+
+        
 
 
         favouriteBtn.addEventListener('click', function addToFavourites() {
