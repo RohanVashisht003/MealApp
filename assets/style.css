@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background-color: #3498db;
 }
 
 .wrapper {
@@ -31,6 +31,11 @@ body {
     border-radius: 5px;
     padding: 0 60px 0 20px;
     font-size: 1.5rem;
+    transition: all 1s;
+}
+
+.search-input input:focus {
+    box-shadow: -1px 1px 15px 3px #ff5722;
 }
 
 #meal-suggestion-list {
@@ -182,59 +187,63 @@ body {
 
 /* <================= media queries=========================> */
 
-@media screen and (max-width:590px){
-    .wrapper{
+@media screen and (max-width:590px) {
+    .wrapper {
         max-width: 500px;
 
     }
-    .search-input input{
+
+    .search-input input {
         font-size: 1.2rem;
     }
 }
 
-@media screen and (max-width:522px){
-    .wrapper{
+@media screen and (max-width:522px) {
+    .wrapper {
         max-width: 420px;
 
     }
-    .search-input input{
+
+    .search-input input {
         font-size: 1.2rem;
     }
 
-    .meal-container{
+    .meal-container {
         width: 380px;
         height: auto;
-        margin: 10px 1px; 
+        margin: 10px 1px;
     }
 
-    .meal-container img{
+    .meal-container img {
         height: 60%;
     }
 
-    .meal-container .meta-data h6{
+    .meal-container .meta-data h6 {
         font-size: 1.2rem;
     }
-    .meal-container .meta-data p{
+
+    .meal-container .meta-data p {
         font-size: 1rem;
     }
-    .favourite-btn{
-    position: absolute;
-    top: 0%;
-    left: 83%;
-    background-color: transparent;
-    /* color: rgb(139, 135, 135); */
-    font-size: 38px;
-    padding: 0px 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
+
+    .favourite-btn {
+        position: absolute;
+        top: 0%;
+        left: 83%;
+        background-color: transparent;
+        /* color: rgb(139, 135, 135); */
+        font-size: 38px;
+        padding: 0px 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
     }
 }
 
-@media screen and (max-width: 390px){
+@media screen and (max-width: 390px) {
 
-    .wrapper{
+    .wrapper {
         max-width: 320px;
     }
 
@@ -248,7 +257,7 @@ body {
         font-size: 0.8rem;
     }
 
-    .meal-container{
+    .meal-container {
         margin: 24px;
     }
 
