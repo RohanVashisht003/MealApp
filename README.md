@@ -1,5 +1,7 @@
 # MealApp
 
+[Click Here](https://rohanvashisht003.github.io/MealApp/)
+
 In this app i am using mealApi:- https://www.themealdb.com/api.php to fetch data and using that JSON data in my app.
 
 <======================= Functionalities ===============================>
