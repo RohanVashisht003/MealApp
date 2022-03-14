@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Meal Details</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/meal-style.css">
 </head>
 
 <body>
@@ -16,28 +16,53 @@
     <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand text-light" href="./index.html">Food Voyager</a>
-        <button id="show-fav-btn">Show Favourites</button>
-        </div>
+      </div>
       </div>
     </nav>
   </header>
 
-  <div class="wrapper">
-    <div class="search-input">
-      <input type="text" placeholder="Type to search..">
+
+  <div class="main-container d-flex flex-column justify-content-center">
+
+    <!-- meta info contaier -->
+    <div class="meta-container" id="thumb">
+      <div id="heading">
+        <h3 class="meal-name" id="meal-title"></h3>
+      </div>
+
+
+      <div id="sub-text">
+        <p id="area"></p>
+        <p id="cat"></p>
+      </div>
+
     </div>
-   
+
+    <!-- video container -->
+    <div id="wrap">
+      <div id="video-container">
+        <iframe id="ifream" src="" frameborder="0" autoplay; allowfullscreen>
+        </iframe>
+      </div>
+      <div class="ingredients-container">
+        <h4>INGREDIENTS</h4>
+        <ul id="ingredients"></ul>
+      </div>
+    </div>
+
+
+
+
+    <!-- other text container -->
+    <div class="inst-container">
+      <h4>COOKING STEPS</h4>
+      <p id="ins">
+      </p>
+    </div>
   </div>
-
-
-  <div id="meal-suggestion-list"  class="container-fluid">
-
-  </div>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="./assets/script.js"></script>
+  <script src="./assets/meal-details.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: white;
+}
+
+.meta-container {
+    height: 45rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.meta-container #heading {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.meta-container .meal-name {
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 123, 0);
+    width: fit-content;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.meta-container #sub-text {
+    margin: 10px auto;
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#sub-text p {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1rem;
+    font-weight: 900;
+    color: rgb(139, 199, 83);
+    margin: 1px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#video-container {
+    height: 28rem;
+    width: 50%;
+    border-right: 4px solid rgb(48, 88, 219);
+}
+
+
+#video-container iframe {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.ingredients-container {
+    width: 50%;
+    height: 28rem;
+    overflow: scroll;
+    background-color: #8bc34a;
+}
+
+h4 {
+    margin: 10px auto;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ingredients-container ul {
+    list-style: none;
+}
+
+.ingredients-container::-webkit-scrollbar {
+    display: none;
+}
+
+.inst-container {
+    /* border: 2px solid white; */
+    background-color: rgba(132, 99, 224, 0.699);
+    padding: 17px;
+}
+
+.inst-container p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    color: whitesmoke;
+    white-space: pre-line;
+}
+
+
+/* <===================Media Queries========================>*/
+
+@media screen and (max-width:500px) {
+    .meta-container .meal-name {
+        font-size: 1.5rem;
+        padding: 6px;
+        top: -250px;
+    }
+
+    .meta-container #sub-text {
+        top: 92px;
+    }
+
+    #sub-text p {
+        font-size: 1rem;
+        font-weight: light;
+        padding: 4px;
+    }
+
+    .meta-container {
+        height: 25rem;
+    }
+
+    #video-container {
+        height: 20rem;
+    }
+
+    .ingredients-container {
+        height: 20rem;
+    }
+
+    #wrap {
+        flex-direction: column;
+    }
+
+    #video-container {
+        width: 100%;
+        border: none;
+    }
+
+    .ingredients-container {
+        width: 100%;
+    }
+}
