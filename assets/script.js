@@ -161,7 +161,7 @@ window.onload = () => {
     inputBox.onkeyup = (event) => {
         if (inputBox.value.trim().length === 0) {
             searchList.textContent = '';
-            searchList.innerHTML = `<h3 style="color:white;">You haven't entered anything</h3>`;
+            searchList.innerHTML = `<p style="color:white;">You haven't entered anything</p>`;
             return;
         }
         clearTimeout(searchTime);

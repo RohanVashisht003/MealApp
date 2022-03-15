@@ -47,7 +47,7 @@ body {
     padding: 2px;
     flex-wrap: wrap;
     overflow-y: scroll;
-    min-height: 55vh;
+    min-height: 100vh;
 }
 
 #meal-suggestion-list::-webkit-scrollbar {
@@ -196,15 +196,34 @@ footer{
 
 /* <================= media queries=========================> */
 
-@media screen and (max-width:590px) {
+@media screen and (max-width:280px) {
+    .favourite-btn {
+        position: absolute;
+        top: 0%;
+        left: 83%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
     .wrapper {
-        max-width: 500px;
-
+        max-width: 320px;
     }
 
-    .search-input input {
-        font-size: 1.2rem;
+    #show-fav-btn {
+        padding: 5px;
+        background-color: #dd6b0d;
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative;
+        border: none;
+        font-size: 0.8rem;
     }
+
+    .meal-container {
+        margin: 24px;
+    }
+
 }
 
 @media screen and (max-width:522px) {
@@ -239,35 +258,21 @@ footer{
         position: absolute;
         top: 0%;
         left: 83%;
-        background-color: transparent;
-        /* color: rgb(139, 135, 135); */
-        font-size: 38px;
-        padding: 0px 18px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        text-align: center;
     }
 }
 
-@media screen and (max-width: 390px) {
-
+@media screen and (max-width:590px) {
     .wrapper {
-        max-width: 320px;
+        max-width: 500px;
+
     }
 
-    #show-fav-btn {
-        padding: 5px;
-        background-color: #dd6b0d;
-        color: #FFF;
-        transition: all 0.5s;
-        position: relative;
-        border: none;
-        font-size: 0.8rem;
+    .search-input input {
+        font-size: 1.2rem;
     }
-
-    .meal-container {
-        margin: 24px;
-    }
-
 }
+
+
+
+
+
