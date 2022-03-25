@@ -83,6 +83,7 @@ body {
     height: 28rem;
     overflow: scroll;
     background-color: #8bc34a;
+    padding: 17px;
 }
 
 h4 {

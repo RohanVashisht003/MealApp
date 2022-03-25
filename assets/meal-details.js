@@ -11,8 +11,9 @@ let id = window.location.search.split('?')[1];
 
 let meal = JSON.parse(localStorage.getItem(id));
 
-document.title = meal.strMeal;
+document.title = 'Meal-Detail | '+meal.strMeal;
 
+// for rendering the page
 function renderPage(meal){
     const {strMeal, strCategory, strArea, strInstructions, strYoutube, strMealThumb} = meal;
 
@@ -36,12 +37,12 @@ function renderPage(meal){
         const li = document.createElement('li');
         li.innerHTML = `<input type="checkbox"> ${meal[measure]} ${meal[ingredient]}`
 
-        ingredients.appendChild(li);
+        ingre.appendChild(li);
     }
 }
 
 
 // trigerring function
 window.onload = ()=>{
-        renderPage(meal);
+       renderPage(meal);
 }

@@ -1,10 +1,10 @@
+
 const inputBox = document.querySelector("input");
 const searchList = document.getElementById('meal-suggestion-list');
 const showFavourite = document.getElementById('show-fav-container');
 const favBtn = document.getElementById('show-fav-btn');
 
-
-
+// for showing your favourites
 favBtn.addEventListener('click', function showFavourites() {
     inputBox.value = "";
     searchList.textContent = "";
@@ -38,6 +38,7 @@ function renderAndFilterResults(meals, isFavCalled) {
         const img = document.createElement('img');
         img.src = meal.strMealThumb;
 
+        // favourite button
         const favouriteBtn = document.createElement('button');
         favouriteBtn.setAttribute('class', 'favourite-btn');
         favouriteBtn.setAttribute('id', meal.idMeal);
@@ -60,25 +61,29 @@ function renderAndFilterResults(meals, isFavCalled) {
         item.append(img);
         item.append(cardBody);
 
+        // if meal is in favourites then add fav-color to button
         if (isInFavs(meal.idMeal) !== -1) {
             favouriteBtn.classList.add('is-fav-color');
         }
+        // append the updated list
         searchList.appendChild(item);
 
-        // opening a new page and storing fetched data in localStorage
+        // opening a page and storing fetched data in localStorage
         name.addEventListener('click', function loadDetails() {
             localStorage.setItem(meal.idMeal, JSON.stringify(meal));
             window.location.replace('meal.html?' + meal.idMeal);
         });
 
-        
 
-
+        // for adding to favourites
         favouriteBtn.addEventListener('click', function addToFavourites() {
             let id = meal.idMeal;
+
+            // check if meal is in favourite localStorage ?
             let itemIndex = isInFavs(id);
 
             let favs;
+            // meal is in localStorage
             if (itemIndex !== -1) {
 
                 favs = JSON.parse(localStorage.getItem('favs'));
@@ -88,10 +93,11 @@ function renderAndFilterResults(meals, isFavCalled) {
                 if (isFavCalled) {
                     this.parentNode.style.display = 'none';
                 }
-            } else {
+            }
+            else {
                 favs = [];
                 let obj = {
-                    id: meal.idMeal,
+                    id: id,
                     meal
                 }
 
@@ -114,23 +120,25 @@ function renderAndFilterResults(meals, isFavCalled) {
     }
 }
 
-
+// check if item is favs localStorage
 function isInFavs(id) {
     let favs = JSON.parse(localStorage.getItem('favs'));
     if (favs == null) {
         return -1;
     }
+    // get index of item in array
     let itemIndex = favs.findIndex(fav => fav.id == id);
     return itemIndex;
 }
 
-
+// fetching data using API
 function fetchData(text) {
 
+    // for showing loading animation
     let loader = `<div class="loader"></div>`;
-
     searchList.innerHTML = loader;
 
+    // url
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s= ${text}`;
 
     fetch(url)
@@ -139,11 +147,9 @@ function fetchData(text) {
             // sending array data only
             const arr = data.meals;
 
+            // if no data found
             if (arr === null) {
-                let item = document.createElement('p');
-                if (!searchList.hasChildNodes()) {
-                    searchList.appendChild(item);
-                }
+                searchList.innerHTML = `<p style="color:white;">No data found!!</p>`;
                 return;
             }
             searchList.textContent = ''
@@ -155,13 +161,13 @@ function fetchData(text) {
 }
 
 
-//1. triggering starting point
+//  triggering starting point
 let searchTime = 0;
 window.onload = () => {
     inputBox.onkeyup = (event) => {
         if (inputBox.value.trim().length === 0) {
             searchList.textContent = '';
-            searchList.innerHTML = `<p style="color:white;">You haven't entered anything</p>`;
+            searchList.innerHTML = `<p style="color:white;">You haven't entered anything / Enter again to search</p>`;
             return;
         }
         clearTimeout(searchTime);
